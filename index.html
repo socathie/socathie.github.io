@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr. Cathie So | Multidisciplinary builder</title>
@@ -48,11 +48,7 @@
     <meta name="twitter:creator" content="@drcathieso_eth" />
 
     <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff79c6'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 9.95 9 11 5.16-1.05 9-5.45 9-11V7l-10-5z'/%3E%3C/svg%3E"
-    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -79,7 +75,7 @@
           "Privacy Technologies"
         ]
       }
-    </script>
+        </script>
         
         <style>
             /* Dracula Theme Colors */
@@ -330,6 +326,32 @@
                 transform: translateX(5px);
             }
             
+            /* Coming Soon Links */
+            .link-item.coming-soon {
+                opacity: 0.6;
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+            
+            .link-item.coming-soon:hover {
+                border-color: transparent;
+                background-color: var(--bg);
+                transform: none;
+            }
+            
+            .link-item.coming-soon::before {
+                opacity: 0.3;
+            }
+            
+            .link-item.coming-soon .link-title {
+                color: var(--subtext);
+            }
+            
+            .link-item.coming-soon .link-description {
+                color: var(--subtext);
+                opacity: 0.7;
+            }
+            
             .link-title {
                 font-size: 1.2rem;
                 font-weight: bold;
@@ -452,8 +474,8 @@
                 outline-offset: 2px;
             }
         </style>
-  </head>
-  <body>
+    </head>
+    <body>
     <div class="container">
             <div class="terminal-header">
                 <div class="terminal-dots">
@@ -542,23 +564,23 @@
             <div class="link-title">Bon App Research</div>
             <div class="link-description">Cryptography-enabled applications that benefit all</div>
           </a>
-          <a
-            class="link-item"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="link-title">[soon...] stealth mobile app</div>
-            <div class="link-description">helping new users in a specific lifestyle area</div>
-          </a>
+                      <a
+              class="link-item coming-soon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="link-title">[soon...] stealth mobile app</div>
+              <div class="link-description">helping new users in a specific lifestyle area</div>
+            </a>
 
-          <a
-            class="link-item"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="link-title">[soon...] stealth social platform</div>
-            <div class="link-description"></div>
-          </a>
+            <a
+              class="link-item coming-soon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="link-title">[soon...] stealth social platform</div>
+              <div class="link-description"></div>
+            </a>
         </nav>
       </section>
 
@@ -570,5 +592,5 @@
         </p>
       </footer>
     </div>
-  </body>
+    </body>
 </html>
