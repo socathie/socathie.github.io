@@ -1,15 +1,574 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="0; url=https://drcathieso.eth.xyz/">
-        <script type="text/javascript">
-            window.location.href = "https://drcathieso.eth.xyz/"
-        </script>
-        <title>Page Redirection</title>
-    </head>
-    <body>
-        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
-        If you are not redirected automatically, follow this <a href='https://drcathieso.eth.xyz/'>link</a>.
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Cathie So | Multidisciplinary builder</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Dr. Cathie So | Multidisciplinary researcher and builder with a PhD in neuroscience and deep experience in data science, zero-knowledge machine learning, and quantum computing."
+    />
+    <meta
+      name="keywords"
+      content="Cathie So, data scientist, machine learning, AI researcher, zero-knowledge proofs, zkML, quantum computing, Circom, neuroscience, PhD"
+    />
+    <meta name="author" content="Dr. Cathie So" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Dr. Cathie So | Multidisciplinary builder | Portfolio & Links"
+    />
+    <meta
+      property="og:description"
+      content="Multidisciplinary researcher and builder with a PhD in neuroscience and deep experience in data science, zero-knowledge machine learning, and quantum computing."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cathie.so" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/socathie/socathie.github.io/refs/heads/main/picofme.webp"
+    />
+    <meta property="og:site_name" content="Dr. Cathie So | Multidisciplinary builder" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dr. Cathie So | Multidisciplinary builder" />
+    <meta
+      name="twitter:description"
+      content="Multidisciplinary researcher and builder with a PhD in neuroscience and deep experience in data science, zero-knowledge machine learning, and quantum computing."
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/socathie/socathie.github.io/refs/heads/main/picofme.webp" // TODO: add a better image
+    />
+    <meta name="twitter:creator" content="@drcathieso_eth" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff79c6'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 9.95 9 11 5.16-1.05 9-5.45 9-11V7l-10-5z'/%3E%3C/svg%3E"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dr. Cathie So",
+        "jobTitle": "Data Scientist & Machine Learning Engineer",
+        "description": "Multidisciplinary AI researcher specializing in machine learning, privacy-preserving technologies, and quantum computing.",
+        "url": "https://cathie.so",
+        "sameAs": [
+          "https://github.com/socathie",
+          "https://linkedin.com/in/cathieso",
+          "https://x.com/drcathieso_eth",
+          "https://youtube.com/@drCathieSo_eth"
+        ],
+        "knowsAbout": [
+          "Machine Learning",
+          "Zero-Knowledge Proofs",
+          "Quantum Computing",
+          "Python",
+          "ZKML",
+          "Circom",
+          "Privacy Technologies"
+        ]
+      }
+    </script>
+        
+        <style>
+            /* Dracula Theme Colors */
+            :root {
+                --bg: #282a36;
+                --surface: #44475a;
+                --overlay: #6272a4;
+                --text: #f8f8f2;
+                --subtext: #6272a4;
+                --green: #50fa7b;
+                --cyan: #8be9fd;
+                --pink: #ff79c6;
+                --purple: #bd93f9;
+                --red: #ff5555;
+                --orange: #ffb86c;
+                --yellow: #f1fa8c;
+                
+                /* Terminal styling */
+                --font-mono: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+                --border-radius: 8px;
+                --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: var(--font-mono);
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.6;
+                min-height: 100vh;
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                background: var(--surface);
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow);
+                padding: 40px;
+                border: 1px solid var(--overlay);
+            }
+            
+            /* Terminal Header */
+            .terminal-header {
+                background: var(--bg);
+                margin: -40px -40px 30px -40px;
+                padding: 15px 20px;
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+                border-bottom: 1px solid var(--overlay);
+                font-size: 14px;
+                color: var(--subtext);
+            }
+            
+            .terminal-dots {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 10px;
+            }
+            
+            .dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+            }
+            
+            .dot.red { background: var(--red); }
+            .dot.yellow { background: var(--yellow); }
+            .dot.green { background: var(--green); }
+            
+            /* Profile Section */
+            .profile-section {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                border: 3px solid var(--purple);
+                margin-bottom: 20px;
+                object-fit: cover;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .profile-image:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(255, 121, 198, 0.4);
+            }
+            
+            .name {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: var(--purple);
+                margin-bottom: 10px;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+                color: var(--green);
+                margin-bottom: 20px;
+            }
+            
+            /* Bio Section */
+            .bio {
+                background-color: var(--surface);
+                border-left: 4px solid var(--pink);
+                padding: 20px;
+                margin-bottom: 40px;
+                border-radius: 0 8px 8px 0;
+                position: relative;
+                text-align: left;
+            }
+            
+            .bio::before {
+                content: "// About";
+                position: absolute;
+                top: -10px;
+                left: 10px;
+                background-color: var(--surface);
+                color: var(--subtext);
+                padding: 0 10px;
+                font-size: 0.9rem;
+            }
+            
+            .bio p {
+                margin-bottom: 15px;
+                color: var(--text);
+            }
+            
+            .bio p:last-child {
+                margin-bottom: 0;
+            }
+            
+            /* Social Links */
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-bottom: 40px;
+                flex-wrap: wrap;
+            }
+            
+            .social-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                background-color: var(--bg);
+                color: var(--text);
+                text-decoration: none;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                font-size: 1.5rem;
+                border: 1px solid var(--overlay);
+            }
+            
+            .social-link:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .social-link.github:hover {
+                background-color: var(--purple);
+                color: var(--bg);
+            }
+            
+            .social-link.linkedin:hover {
+                background-color: var(--cyan);
+                color: var(--bg);
+            }
+            
+            .social-link.twitter:hover {
+                background-color: var(--green);
+                color: var(--bg);
+            }
+            
+            .social-link.youtube:hover {
+                background-color: var(--red);
+                color: var(--bg);
+            }
+            
+            /* Links Section */
+            .links-section {
+                margin-bottom: 40px;
+            }
+            
+            .section-title {
+                color: var(--yellow);
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                text-align: center;
+                position: relative;
+            }
+            
+            .section-title::before {
+                content: "/* ";
+                color: var(--subtext);
+            }
+            
+            .section-title::after {
+                content: " */";
+                color: var(--subtext);
+            }
+            
+            .links-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .link-item {
+                display: block;
+                padding: 20px;
+                background-color: var(--bg);
+                color: var(--text);
+                text-decoration: none;
+                border-radius: 8px;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .link-item::before {
+                content: '>';
+                position: absolute;
+                left: 20px;
+                color: var(--pink);
+                font-weight: bold;
+                transition: transform 0.3s ease;
+            }
+            
+            .link-item:hover::before {
+                transform: translateX(5px);
+            }
+            
+            .link-item:hover {
+                border-color: var(--pink);
+                background-color: rgba(255, 121, 198, 0.1);
+                transform: translateX(5px);
+            }
+            
+            .link-title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: var(--cyan);
+                margin-left: 25px;
+                margin-bottom: 5px;
+            }
+            
+            .link-description {
+                color: var(--subtext);
+                font-size: 0.9rem;
+                margin-left: 25px;
+            }
+            
+            /* Footer */
+            .footer {
+                text-align: center;
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid var(--overlay);
+                font-size: 12px;
+                color: var(--subtext);
+            }
+            
+            .footer a {
+                color: var(--pink);
+                text-decoration: none;
+            }
+            
+            .footer a:hover {
+                color: var(--purple);
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                body {
+                    padding: 10px;
+                }
+                
+                .container {
+                    padding: 30px 20px;
+                }
+                
+                .name {
+                    font-size: 2rem;
+                }
+                
+                .title {
+                    font-size: 1rem;
+                }
+                
+                .social-links {
+                    gap: 15px;
+                }
+                
+                .social-link {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 1.3rem;
+                }
+                
+                .link-item {
+                    padding: 15px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .profile-image {
+                    width: 120px;
+                    height: 120px;
+                }
+                
+                .name {
+                    font-size: 1.8rem;
+                }
+                
+                .bio {
+                    padding: 15px;
+                }
+                
+                .social-links {
+                    gap: 12px;
+                }
+                
+                .social-link {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 1.1rem;
+                }
+            }
+            
+            /* Code-like animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .container > * {
+                animation: fadeInUp 0.6s ease-out;
+            }
+            
+            /* Accessibility */
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation: none !important;
+                    transition: none !important;
+                }
+            }
+            
+            /* Focus styles for accessibility */
+            .link-item:focus,
+            .social-link:focus {
+                outline: 2px solid var(--pink);
+                outline-offset: 2px;
+            }
+        </style>
+  </head>
+  <body>
+    <div class="container">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <span>~/me.html</span>
+            </div>
+            
+            <!-- Profile Section -->
+      <section class="profile-section">
+        <img
+          src="https://raw.githubusercontent.com/socathie/socathie.github.io/refs/heads/main/picofme.webp"
+          alt="Dr. Cathie So - Multidisciplinary builder"
+          class="profile-image"
+        />
+        <h1 class="name">Dr. Cathie So</h1>
+        <p class="title">Multidisciplinary builder</p>
+      </section>
+
+              <section class="bio">
+          <p>Multidisciplinary researcher and builder with a PhD in <span style="color: var(--purple);">neuroscience</span> and deep experience in <span style="color: var(--cyan);">data science</span>, <span style="color: var(--green);">zero-knowledge machine learning</span>, and <span style="color: var(--orange);">quantum computing</span>.</p>
+        </section>
+
+      <section class="social-links">
+        <a
+          href="https://github.com/socathie"
+          class="social-link github"
+          title="GitHub Profile"
+          aria-label="Visit my GitHub profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a
+          href="https://linkedin.com/in/cathieso"
+          class="social-link linkedin"
+          title="LinkedIn Profile"
+          aria-label="Visit my LinkedIn profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a
+          href="https://x.com/drcathieso_eth"
+          class="social-link twitter"
+          title="X (Twitter) Profile"
+          aria-label="Visit my X (Twitter) profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a
+          href="https://youtube.com/@drCathieSo_eth"
+          class="social-link youtube"
+          title="YouTube Channel"
+          aria-label="Visit my YouTube channel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </section>
+
+      <section class="links-section">
+        <h2 class="section-title">Quick Links</h2>
+        <nav class="links-container">
+          <a
+            href="https://bonapp.org"
+            class="link-item"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="link-title">Bon App Research</div>
+            <div class="link-description">Cryptography-enabled applications that benefit all</div>
+          </a>
+          <a
+            class="link-item"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="link-title">[soon...] stealth mobile app</div>
+            <div class="link-description">helping new users in a specific lifestyle area</div>
+          </a>
+
+          <a
+            class="link-item"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="link-title">[soon...] stealth social platform</div>
+            <div class="link-description"></div>
+          </a>
+        </nav>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2025 Dr. Cathie So. Built with ❤️ and lots of ☕</p>
+        <p>
+          Made with pure HTML & CSS •
+          <a href="https://draculatheme.com/" target="_blank" rel="noopener noreferrer">Dracula Theme</a>
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>
